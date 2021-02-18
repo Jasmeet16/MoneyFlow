@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs')
 const app = express(); 
 
+let persons;
+
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
@@ -13,7 +15,25 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    console.log(Object.keys(req.body).length);
+    //console.log(req.body[`person1`]);
+    try {
+        persons = [];
+        for (let i = 1; i <= Object.keys(req.body).length; i++){
+            persons.push(req.body[`person${i}`]);
+        }
+        //console.log(persons);
+        res.redirect('expenses')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/expenses', (req, res) => {
+    res.render('expenses' , {data:persons})
+})
+
+app.post('/expenses', (req, res) => {
+    console.log(req.body);
 })
 
 app.listen(3000, () => {
