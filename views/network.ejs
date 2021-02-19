@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/5548f5ed00.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="css/network.css">
+</head>
+
+<body>
+    <h1>Network<h1>
+
+
+            <div id="graph-container" class="graph-container"></div>
+
+            <script>
+                const container = document.getElementById('graph-container');
+
+                const node = '<%-JSON.stringify(nodes)%>';
+                const nodes = JSON.parse(node);
+                console.log(nodes)
+
+                const edge = '<%-JSON.stringify(edges)%>';
+                const edges = JSON.parse(edge);
+                console.log(edges);
+                
+
+                const options = {
+                    edges: {
+                        arrows: {
+                            to: true
+                        },
+                        labelHighlightBold: true,
+                        font: {
+                            size: 20,
+                            color: '#000000'
+                        }
+                    },
+                    nodes: {
+                        font: 'sans-serif',
+                        font: {
+                            size: 20,
+                            color: '#000000'
+                        },
+                        scaling: {
+                            label: true,
+                        },
+                        shape: 'icon',
+                        icon: {
+                            face: 'FontAwesome',
+                            code: '\uf5b8',
+                            size: 30,
+                            color: '#000000',
+                        }
+                    }
+                };
+
+                let network = new vis.Network(container);
+                network.setOptions(options);
+
+                const data = {
+                    nodes: nodes,
+                    edges: edges
+                };
+
+
+
+                network.setData(data);
+
+
+
+            </script>
+</body>
+
+</html>
