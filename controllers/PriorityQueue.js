@@ -32,7 +32,7 @@ class PriorityQueue{
     upHeapify( childIdx ) {
         let pi = Math.floor((childIdx - 1) / 2);
 
-        if ( pi >= 0 && this.arr[pi] < this.arr[childIdx]) {
+        if ( pi >= 0 && this.arr[pi][0] < this.arr[childIdx][0]) {
             this.swap(pi, childIdx);
             this.upHeapify(pi);
         }
@@ -45,9 +45,9 @@ class PriorityQueue{
         
         let maxIdx = idx;
 
-        if (lci < this.arr.length && this.arr[lci] > this.arr[idx]) maxIdx = lci;
+        if (lci < this.arr.length && this.arr[lci][0] > this.arr[idx][0]) maxIdx = lci;
 
-        if (rci < this.arr.length && this.arr[rci] > this.arr[maxIdx]) maxIdx = rci;
+        if (rci < this.arr.length && this.arr[rci][0] > this.arr[maxIdx][0]) maxIdx = rci;
 
         if (idx !== maxIdx) {
             this.swap(maxIdx, idx);
@@ -64,21 +64,21 @@ class PriorityQueue{
     
 }
 
-// const pq = new PriorityQueue();
-// pq.add(10);
-// pq.add(20);
-// pq.add(30);
-// pq.add(40);
-// pq.add(130);
-// pq.add(102);
-// pq.add(104);
-// pq.add(150);
-// pq.add(100);
-// pq.add(105);
-// pq.add(1002);
-// pq.add(120);
-// pq.add(110);
+module.exports.PriorityQueue = PriorityQueue
 
+
+// const pq = new PriorityQueue();
+// pq.add([10,1]);
+// pq.add([103,2]);
+// pq.add([1320,3]);
+// pq.add([10,4]);
+// pq.add([103,5]);
+// pq.add([1022,6]);
+// pq.add([1042,7]);
+// pq.add([10,8]);
+// pq.add([130,9]);
+// pq.add([140,10]);
+// pq.add([1320,11]);
 
 
 // while (!pq.isEmpty()) {

@@ -1,8 +1,15 @@
 .graph-container{
-    max-width: 40%;
-    max-height:80vh;
+    height:80%;
+    width: 40%;
     overflow: hidden;
+    margin: 1rem;
 }
 .vis-network{
     max-height: 80vh !important;
+}
+.network-container{
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

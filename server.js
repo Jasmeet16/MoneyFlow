@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const { solve } = require('./controllers/solveData');
 const ejs = require("ejs");
 const app = express();
 
@@ -38,20 +39,11 @@ app.post("/expenses", (req, res) => {
   res.redirect("network");
 });
 
-app.get("/network", (req, res) => {
-  let nodes = [];
-  for (let i = 0; i < persons.length; i++) {
-    nodes.push({ id: i, label: persons[i] });
-    }
-    let edges = [];
-    for (let i = 0; i < network.from.length ; i++ ){
-        edges.push({from: persons.indexOf(network.from[i]), to: persons.indexOf(network.to[i]), label: network.value[i]});
-    }
-    res.render("network", { nodes: nodes, edges: edges });
-    // console.log(nodes);
-    // console.log(edges);
-
-});
+app.get("/network", (req, res , next) => {
+  req.persons = persons;
+  req.network = network;
+  next();
+} , solve );
 
 app.listen(3000, () => {
   console.log(`server running on port 3000`);
