@@ -1,6 +1,5 @@
-const container = document.getElementById('graph-container');
-const containerSecond = document.getElementById('graph-container-second');
-
+const container = document.getElementById("graph-container");
+const containerSecond = document.getElementById("graph-container-second");
 
 const options = {
   edges: {
@@ -11,6 +10,13 @@ const options = {
     font: {
       size: 20,
       color: "#000000",
+    },
+    color: {
+      //color:'#848484',
+      highlight: "#848484",
+      hover: "#d3d2cd",
+      inherit: false,
+      opacity: 1.0,
     },
   },
   nodes: {
@@ -46,8 +52,8 @@ network.setData(data);
 
 const new_data = {
   nodes: new_nodes,
-  edges : new_edges
-}
+  edges: new_edges,
+};
 
 console.log(data);
 console.log(new_data);

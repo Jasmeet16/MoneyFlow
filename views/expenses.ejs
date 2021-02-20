@@ -1,36 +1,54 @@
+<head>
+    <link href='css/expenses.css' rel="stylesheet">
+</head>
+
 <body>
-    <h1> Enter the transactions </h1>
-    <form id='transaction-container' action="/expenses" method="POST">
-        <select name="from" id="from">
-            <% data.forEach(function(d){ %>
-                <option>
-                    <%= d %>
-                </option>
-                <% }); %>
+    <header>
+        <%- include('partials/header') %>
+    </header>
 
-        </select>
+    <main>
+        <!-- <h1> Enter the transactions </h1> -->
+        <form id='transaction-container' action="/expenses" method="POST">
+            <div>
 
-        <input type="number" name='value' id='value'>
+                <select name="from" id="from">
+                    <% data.forEach(function(d){ %>
+                        <option>
+                            <%= d %>
+                        </option>
+                        <% }); %>
+
+                </select>
+
+                <input type="number" name='value' id='value'>
 
 
-        <select name="to" id="to">
-            <% data.forEach(function(d){ %>
-                <option>
-                    <%= d %>
-                </option>
-                <% }); %>
+                <select name="to" id="to">
+                    <% data.forEach(function(d){ %>
+                        <option>
+                            <%= d %>
+                        </option>
+                        <% }); %>
 
-        </select>
-        <button type="submit">Submit</button>
-    </form>
-    <button type="button" id='add-transaction'> Add another transaction </button>
+                </select>
+            </div>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+        <button type="button" id='add-transaction'> Add another transaction </button>
+
+    </main>
+
+    <footer class='footer text-center'>
+        <%- include('partials/footer') %>
+    </footer>
 
     <script>
         const addTransaction = document.getElementById('add-transaction');
         const transactionContainer = document.getElementById('transaction-container');
         addTransaction.addEventListener('click', () => {
             // console.log(data);
-            transactionContainer.innerHTML = transactionContainer.innerHTML + `<select name="from" id="from">
+            transactionContainer.innerHTML = transactionContainer.innerHTML + `<div> <select name="from" id="from">
             <% data.forEach(function(d){ %>
                 <option>
                     <%= d %>
@@ -49,7 +67,7 @@
                 </option>
                 <% }); %>
 
-        </select>`;
+        </select> </div>`;
         })
     </script>
 </body>

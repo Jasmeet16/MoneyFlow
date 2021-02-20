@@ -2,40 +2,49 @@
 
 <head>
     <script src="https://kit.fontawesome.com/5548f5ed00.js" crossorigin="anonymous"></script>
-    <script  type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link rel="stylesheet" href="css/network.css">
 </head>
 
 <body>
-    <h1>Network<h1>
+    <header>
+        <%- include('partials/header') %>
+    </header>
 
-            <div class="network-container">
+    <main>
+        <h1>Network<h1>
+                <div class="network-container">
+                    <div id="graph-container" class="graph-container"></div>
+                    <div id="graph-container-second" class="graph-container"></div>
+                </div>
+    </main>
 
-            <div id="graph-container" class="graph-container"></div>
-            <div id="graph-container-second" class="graph-container"></div>
-        </div>
+    <footer class='footer text-center'>
+        <%- include('partials/footer') %>
+    </footer>
 
-            <script>
-                
+    <script>
 
-                const node = '<%-JSON.stringify(nodes)%>';
-                const nodes = JSON.parse(node);
-              //  console.log(nodes)
 
-                const edge = '<%-JSON.stringify(edges)%>';
-                const edges = JSON.parse(edge);
-               // console.log(edges);
+        const node = '<%-JSON.stringify(nodes)%>';
+        const nodes = JSON.parse(node);
 
-                const new_node = '<%-JSON.stringify(new_nodes)%>';
-                const new_nodes = JSON.parse(new_node);
-                console.log(new_nodes)
+        //  console.log(nodes) //
 
-                const new_edge = '<%-JSON.stringify(new_edges)%>';
-                const new_edges = JSON.parse(new_edge);
-                console.log(new_edges);
+        const edge = '<%-JSON.stringify(edges)%>';
+        const edges = JSON.parse(edge);
+        // console.log(edges);
 
-            </script>
-            <script src="js/network.js"></script>
+        const new_node = '<%-JSON.stringify(new_nodes)%>';
+        const new_nodes = JSON.parse(new_node);
+        console.log(new_nodes)
+
+        const new_edge = '<%-JSON.stringify(new_edges)%>';
+        const new_edges = JSON.parse(new_edge);
+        console.log(new_edges);
+
+    </script>
+    <script src="js/network.js"></script>
 </body>
 
 </html>
