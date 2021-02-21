@@ -1,0 +1,20 @@
+:root{
+    --background-color:#eeeded;
+    --primary-color: #222831;
+  }
+
+main{
+background-color: var(--background-color);
+  min-height: 85vh !important;
+  display: flex;
+  font-family: "Mulish", sans-serif;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+ul{
+    list-style: none;
+}
+li{
+    margin: 1rem;
+}

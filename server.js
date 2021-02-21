@@ -12,6 +12,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+
 app.get("/", (req, res) => {
   res.render("home");
 });
@@ -44,6 +46,10 @@ app.get("/network", (req, res , next) => {
   req.network = network;
   next();
 } , solve );
+
+app.get('/help', (req, res) => {
+  res.render('help');
+})
 
 app.listen(3000, () => {
   console.log(`server running on port 3000`);

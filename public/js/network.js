@@ -9,32 +9,35 @@ const options = {
     },
     labelHighlightBold: true,
     font: {
-      size: 20,
-      color: "#000000",
+      size: 14,
+      color: "#056674",
     },
     color: {
-      //color:'#848484',
-      highlight:'#848484',
+      color:'#056674',
+      highlight:'#056674',
       hover: '#d3d2cd',
       inherit: false,
       opacity:1.0
-  }
+    }
   },
   nodes: {
     font: {
-      size: 20,
+      size: 14,
       color: "#000000",
+      face: 'Mulish',
+      bold:true
     },
     scaling: {
       label: true,
     },
     shape: "icon",
     icon: {
-      face: '"Font Awesome 5 Free"',
-      code: "\uf183",
-      size: 30,
-      color: "#000000",
-    },
+          face: "'Font Awesome 5 Free'",
+          weight: "900", 
+          code: "\uf007",
+          size: 20,
+          color: "#ff4b5c",
+        },
   },
 };
 

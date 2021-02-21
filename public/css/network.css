@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;1,900&display=swap");
 
 :root {
     --background-color:#eeeded;
@@ -18,9 +19,15 @@
  
 .graph-container{
     height:80%;
-    width: 40%;
+    width: 50%;
     overflow: hidden;
     margin: 1rem;
+
+}
+
+canvas{
+  background-color: #dfe0df;
+  font-family: "Mulish", sans-serif !important;
 }
 .vis-network{
     max-height: 80vh !important;

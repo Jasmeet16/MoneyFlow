@@ -54,11 +54,12 @@ button{
 h2 {
   color: #393e46 !important;
   padding: 1rem !important;
+  
 }
 .add-person{
   position:absolute;
   top: 2px;
-  right: -100px;
+  right: -110px;
 }
 .submit {
   min-width: 200px;
