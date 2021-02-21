@@ -8,8 +8,9 @@
     </header>
 
     <main>
-        <!-- <h1> Enter the transactions </h1> -->
-        <form id='transaction-container' action="/expenses" method="POST">
+        <h1> Enter the transactions </h1>
+        <p> <span>From -> </span> <span> amount </span> <span> -> to</span> </p>
+        <form id='transaction-container' class='transaction-container' action="/expenses" method="POST">
             <div>
 
                 <select name="from" id="from">
@@ -33,9 +34,10 @@
 
                 </select>
             </div>
-            <button class="submit" type="submit">Submit</button>
+            <button type="button" class="add-button" id='add-transaction'> Add another transaction </button>
+
         </form>
-        <button type="button" id='add-transaction'> Add another transaction </button>
+        <button class="submit" form="transaction-container" type="submit">Submit</button>
 
     </main>
 
@@ -48,7 +50,9 @@
         const transactionContainer = document.getElementById('transaction-container');
         addTransaction.addEventListener('click', () => {
             // console.log(data);
-            transactionContainer.innerHTML = transactionContainer.innerHTML + `<div> <select name="from" id="from">
+            const node = document.createElement('div')
+            //node.setAttribute('name', `person${count++}`)
+            node.innerHTML = `<select name="from" id="from">
             <% data.forEach(function(d){ %>
                 <option>
                     <%= d %>
@@ -67,7 +71,28 @@
                 </option>
                 <% }); %>
 
-        </select> </div>`;
+        </select>`
+            transactionContainer.appendChild(node);
+            //     transactionContainer.innerHTML = transactionContainer.innerHTML + `<div> <select name="from" id="from">
+            //     <% data.forEach(function(d){ %>
+            //         <option>
+            //             <%= d %>
+            //         </option>
+            //         <% }); %>
+
+            // </select>
+
+            // <input type="number" name='value' id='value'>
+
+
+            // <select name="to" id="to">
+            //     <% data.forEach(function(d){ %>
+            //         <option>
+            //             <%= d %>
+            //         </option>
+            //         <% }); %>
+
+            // </select> </div>`;
         })
     </script>
 </body>

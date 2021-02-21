@@ -1,3 +1,21 @@
+
+:root {
+    --background-color:#eeeded;
+    --primary-color: #242333;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  main {
+    display: flex;
+    min-height: 88vh !important;
+    font-family: "Mulish", sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color);
+  }
+ 
 .graph-container{
     height:80%;
     width: 40%;

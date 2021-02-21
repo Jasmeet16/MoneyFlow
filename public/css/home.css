@@ -1,7 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;1,900&display=swap");
 
+:root{
+  --background-color:#eeeded;
+  --primary-color: #222831;
+}
+header{
+  min-height: 10vh !important;
+  max-height: 10vh !important;
+}
+footer{
+  height: fit-content;
+}
+p{
+  margin-bottom: 0 !important;
+}
 main {
-  min-height: 80vh !important;
+  background-color: var(--background-color);
+  min-height: 85vh !important;
   display: flex;
   font-family: "Mulish", sans-serif;
   justify-content: center;
@@ -9,10 +24,42 @@ main {
   text-align: center;
 }
 
-.container{
-  
+.container {
+  position: relative !important;
+  display: flex;
+  max-width: 30% !important;
+  flex-direction: column !important;
 }
 
-h1 {
-  color: rgb(4, 4, 29) !important;
+input {
+  border: 1px solid #393e46;
+   padding: 10px 20px 10px 10px;
+   border-radius: 1rem;
+   background: transparent;
+   font-size: 30px;
+   text-align: right;
+   margin: 5px !important;
+}
+button{
+  color: #fff;
+  background: var(--primary-color);
+  cursor: pointer !important;
+  border-radius: 1rem !important; 
+  font-size: 15px !important;
+  font-weight: bolder;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+}
+
+h2 {
+  color: #393e46 !important;
+  padding: 1rem !important;
+}
+.add-person{
+  position:absolute;
+  top: 2px;
+  right: -100px;
+}
+.submit {
+  min-width: 200px;
 }
