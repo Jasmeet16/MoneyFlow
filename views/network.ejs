@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <script src="https://kit.fontawesome.com/5548f5ed00.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link rel="stylesheet" href="css/network.css">
 </head>
@@ -20,6 +19,7 @@
     </main>
 
 
+
     <script>
 
 
@@ -34,11 +34,11 @@
 
         const new_node = '<%-JSON.stringify(new_nodes)%>';
         const new_nodes = JSON.parse(new_node);
-        console.log(new_nodes)
+        //console.log(new_nodes)
 
         const new_edge = '<%-JSON.stringify(new_edges)%>';
         const new_edges = JSON.parse(new_edge);
-        console.log(new_edges);
+       // console.log(new_edges);
 
     </script>
     <script src="js/network.js"></script>

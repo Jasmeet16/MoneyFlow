@@ -1,5 +1,6 @@
-const container = document.getElementById("graph-container");
-const containerSecond = document.getElementById("graph-container-second");
+const container = document.getElementById('graph-container');
+const containerSecond = document.getElementById('graph-container-second');
+
 
 const options = {
   edges: {
@@ -13,11 +14,11 @@ const options = {
     },
     color: {
       //color:'#848484',
-      highlight: "#848484",
-      hover: "#d3d2cd",
+      highlight:'#848484',
+      hover: '#d3d2cd',
       inherit: false,
-      opacity: 1.0,
-    },
+      opacity:1.0
+  }
   },
   nodes: {
     font: {
@@ -29,8 +30,8 @@ const options = {
     },
     shape: "icon",
     icon: {
-      face: "FontAwesome",
-      code: "\uf5b8",
+      face: '"Font Awesome 5 Free"',
+      code: "\uf183",
       size: 30,
       color: "#000000",
     },
@@ -52,8 +53,8 @@ network.setData(data);
 
 const new_data = {
   nodes: new_nodes,
-  edges: new_edges,
-};
+  edges : new_edges
+}
 
 console.log(data);
 console.log(new_data);
